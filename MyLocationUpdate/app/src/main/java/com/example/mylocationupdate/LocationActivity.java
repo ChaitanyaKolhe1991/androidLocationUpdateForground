@@ -14,19 +14,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class LocationActivity extends AppCompatActivity {
     static int REQ_LOC_PER = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_location_tracing);
         findViewById(R.id.button_start).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(
-                            MainActivity.this,
+                            LocationActivity.this,
                             new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                             REQ_LOC_PER
                     );
